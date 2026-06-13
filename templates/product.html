@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title %}{{ product.product_name }} &middot; CeneoScraper{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-wrap justify-content-between align-items-start mb-3 gap-2">
+  <div>
+    <h1 class="mb-1">{{ product.product_name }}</h1>
+    <div class="text-muted">
+      Code <code>{{ product.product_code }}</code> &middot;
+      {{ product.count }} opinions &middot;
+      {% if product.average_score is not none %}
+        avg {{ product.average_score }} / 5
+      {% else %}
+        no scores
+      {% endif %}
+    </div>
+  </div>
+  <div class="d-flex gap-2">
+    <a class="btn btn-info text-white" href="{{ url_for('charts', product_code=product.product_code) }}">View charts</a>
+    <div class="btn-group" role="group">
+      <a class="btn btn-outline-secondary" href="{{ url_for('download', product_code=product.product_code, filetype='csv') }}">CSV</a>
+      <a class="btn btn-outline-secondary" href="{{ url_for('download', product_code=product.product_code, filetype='xlsx') }}">XLSX</a>
+      <a class="btn btn-outline-secondary" href="{{ url_for('download', product_code=product.product_code, filetype='json') }}">JSON</a>
+    </div>
+  </div>
+</div>
+
+<div class="table-responsive bg-white shadow-sm rounded p-2">
+  <table id="opinionsTable" class="table table-striped table-bordered w-100">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Author</th>
+        <th>Recommendation</th>
+        <th>Score</th>
+        <th>Content</th>
+        <th>Pros</th>
+        <th>Cons</th>
+        <th>Helpful</th>
+        <th>Unhelpful</th>
+        <th>Published</th>
+        <th>Purchased</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for o in product.opinions %}
+      <tr>
+        <td>{{ o.opinion_id or "" }}</td>
+        <td>{{ o.author or "" }}</td>
+        <td>{{ o.recommendation or "" }}</td>
+        <td>{{ o.score or "" }}</td>
+        <td>{{ o.content or "" }}</td>
+        <td>
+          {% if o.pros %}
+            <ul class="mb-0 ps-3">{% for p in o.pros %}<li>{{ p }}</li>{% endfor %}</ul>
+          {% endif %}
+        </td>
+        <td>
+          {% if o.cons %}
+            <ul class="mb-0 ps-3">{% for c in o.cons %}<li>{{ c }}</li>{% endfor %}</ul>
+          {% endif %}
+        </td>
+        <td>{{ o.helpful or "0" }}</td>
+        <td>{{ o.unhelpful or "0" }}</td>
+        <td>{{ o.publish_date or "" }}</td>
+        <td>{{ o.purchase_date or "" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap5.min.js"></script>
+<script>
+  $(function () {
+    $('#opinionsTable').DataTable({
+      pageLength: 25,
+      lengthMenu: [10, 25, 50, 100],
+      order: [],
+      // per-column filter inputs in the footer
+      initComplete: function () {
+        const api = this.api();
+        $('<tfoot><tr></tr></tfoot>').appendTo('#opinionsTable');
+        api.columns().every(function () {
+          const column = this;
+          const title = $(column.header()).text();
+          const input = $('<input type="text" class="form-control form-control-sm" placeholder="Filter ' + title + '">')
+            .appendTo($('#opinionsTable tfoot tr').append('<th></th>').children().last())
+            .on('keyup change clear', function () {
+              if (column.search() !== this.value) {
+                column.search(this.value).draw();
+              }
+            });
+        });
+      }
+    });
+  });
+</script>
+{% endblock %}

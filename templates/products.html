@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Products &middot; CeneoScraper{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h1 class="mb-0">Extracted products</h1>
+  <a href="{{ url_for('extract') }}" class="btn btn-primary">Extract new</a>
+</div>
+
+{% if not products %}
+  <div class="alert alert-info">
+    No products have been extracted yet.
+    <a href="{{ url_for('extract') }}" class="alert-link">Extract one now.</a>
+  </div>
+{% else %}
+<div class="table-responsive">
+  <table class="table table-hover align-middle bg-white shadow-sm rounded overflow-hidden">
+    <thead class="table-dark">
+      <tr>
+        <th>Product</th>
+        <th class="text-center">Opinions</th>
+        <th class="text-center">With pros</th>
+        <th class="text-center">With cons</th>
+        <th class="text-center">Avg. score</th>
+        <th class="text-end">Download</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in products %}
+      <tr>
+        <td>
+          <a href="{{ url_for('product', product_code=p.product_code) }}" class="fw-semibold text-decoration-none">
+            {{ p.product_name }}
+          </a>
+          <div class="text-muted small">{{ p.product_code }}</div>
+        </td>
+        <td class="text-center">{{ p.count }}</td>
+        <td class="text-center">{{ p.count_with_pros }}</td>
+        <td class="text-center">{{ p.count_with_cons }}</td>
+        <td class="text-center">
+          {% if p.average_score is not none %}
+            <span class="badge bg-success">{{ p.average_score }} / 5</span>
+          {% else %}
+            <span class="text-muted">&mdash;</span>
+          {% endif %}
+        </td>
+        <td class="text-end">
+          <div class="btn-group btn-group-sm" role="group">
+            <a class="btn btn-outline-secondary" href="{{ url_for('download', product_code=p.product_code, filetype='csv') }}">CSV</a>
+            <a class="btn btn-outline-secondary" href="{{ url_for('download', product_code=p.product_code, filetype='xlsx') }}">XLSX</a>
+            <a class="btn btn-outline-secondary" href="{{ url_for('download', product_code=p.product_code, filetype='json') }}">JSON</a>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+{% endblock %}

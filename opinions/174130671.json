@@ -1,0 +1,140 @@
+[
+    {
+        "opinion_id": "19959382",
+        "author": "l...o",
+        "recommendation": "Polecam",
+        "score": "5/5",
+        "content": "Na chwilę obecną mogę napisać jedynie tyle... Produkt łatwy w aplikacji, pozostawia włosy nieco sztywne, ale to raczej normalne. Na efekty, które mam nadzieję się pojawią trzeba poczekać.",
+        "pros": [],
+        "cons": [],
+        "helpful": "0",
+        "unhelpful": "2",
+        "publish_date": "2025-09-24 20:22:56",
+        "purchase_date": "2025-09-21 19:59:06"
+    },
+    {
+        "opinion_id": "20403013",
+        "author": "p...k",
+        "recommendation": "Polecam",
+        "score": "5/5",
+        "content": "Strzygę się teraz trzy razy dziennie. Zwykłe nożyczki nie dają rady. Muszę używać podkaszarki spalinowej. W cichym pomieszczeniu słychać jak rosną.",
+        "pros": [],
+        "cons": [],
+        "helpful": "1",
+        "unhelpful": "2",
+        "publish_date": "2026-03-23 12:57:46",
+        "purchase_date": "2026-03-11 21:45:32"
+    },
+    {
+        "opinion_id": "19689180",
+        "author": "s...0",
+        "recommendation": "Polecam",
+        "score": "5/5",
+        "content": "Efekt jest, ale potrzeba cierpliwości.",
+        "pros": [],
+        "cons": [],
+        "helpful": "2",
+        "unhelpful": "0",
+        "publish_date": "2025-05-28 07:50:55",
+        "purchase_date": "2025-05-08 12:56:41"
+    },
+    {
+        "opinion_id": "20278446",
+        "author": "l...v",
+        "recommendation": "Polecam",
+        "score": "5/5",
+        "content": "Jest super, powoli działa, dla rezultatu potrzebny będzie czas",
+        "pros": [],
+        "cons": [],
+        "helpful": "0",
+        "unhelpful": "0",
+        "publish_date": "2026-02-09 07:55:19",
+        "purchase_date": "2026-01-26 14:06:45"
+    },
+    {
+        "opinion_id": "19621975",
+        "author": "s...k",
+        "recommendation": "Polecam",
+        "score": "5/5",
+        "content": "PRODUKT TAK SPODOBAŁ SIĘ MĘŻOWI ,ŻE ZAMÓWIŁAM NASTĘPNE OPAKOWANIA",
+        "pros": [],
+        "cons": [],
+        "helpful": "0",
+        "unhelpful": "4",
+        "publish_date": "2025-04-28 09:55:44",
+        "purchase_date": "2025-04-23 13:43:40"
+    },
+    {
+        "opinion_id": "19601493",
+        "author": "a...1",
+        "recommendation": "Polecam",
+        "score": "5/5",
+        "content": "produkt zgodny z opisem, kupię ponownie",
+        "pros": [],
+        "cons": [],
+        "helpful": "1",
+        "unhelpful": "1",
+        "publish_date": "2025-04-16 08:36:35",
+        "purchase_date": "2025-03-27 08:51:57"
+    },
+    {
+        "opinion_id": "20169425",
+        "author": "w...k",
+        "recommendation": "Polecam",
+        "score": "4/5",
+        "content": "za krótko używam aby wystawić opinię",
+        "pros": [],
+        "cons": [],
+        "helpful": "0",
+        "unhelpful": "2",
+        "publish_date": "2025-12-22 13:23:03",
+        "purchase_date": "2025-12-08 18:47:37"
+    },
+    {
+        "opinion_id": "19559510",
+        "author": "marek",
+        "recommendation": "Nie polecam",
+        "score": "0,5/5",
+        "content": "Już drugie opakowanie produktu po kilkunastu aplikacjach nie działa. Wylewa się trochę płynu zamiast pianki. Natomiast wewnątrz znajduje się około połowy zawartości. Próbowałem wstrząsnąć ale nie pomaga. Mogę odesłać produkt tylko proszę o adres. Data ważności produktu zamazana!!!.",
+        "pros": [],
+        "cons": [],
+        "helpful": "8",
+        "unhelpful": "3",
+        "publish_date": "2025-03-27 08:39:15",
+        "purchase_date": "2025-02-18 15:58:58"
+    },
+    {
+        "opinion_id": "19984154",
+        "author": "n...a",
+        "recommendation": "Nie polecam",
+        "score": "1/5",
+        "content": "Kupiłem 2 puszki produktu, zarówno pierwsza jak i druga przestały po kilku użyciach produkować pianę, wydobywa się z nich tylko niewielka ilość płynu",
+        "pros": [],
+        "cons": [
+            "skuteczność",
+            "szybkość działania",
+            "wydajność"
+        ],
+        "helpful": "2",
+        "unhelpful": "0",
+        "publish_date": "2025-10-03 17:34:37",
+        "purchase_date": "2025-09-02 17:44:43"
+    },
+    {
+        "opinion_id": "20391937",
+        "author": "p...8",
+        "recommendation": "Nie polecam",
+        "score": "1/5",
+        "content": "Brak numeru LOT i REF na opakowaniu co wskazuje na nieoryginalny produkt nie nadający się do użytku... Apteka nie odpowiada na maile..... Żenada",
+        "pros": [],
+        "cons": [
+            "skuteczność",
+            "szybkość działania",
+            "wydajność"
+        ],
+        "helpful": "0",
+        "unhelpful": "0",
+        "publish_date": "2026-03-18 19:46:52",
+        "purchase_date": "2026-03-08 14:17:40"
+    }
+]

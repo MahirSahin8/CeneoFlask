@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Home &middot; CeneoScraper{% endblock %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-body-tertiary rounded-3 border">
+  <div class="container-fluid py-3">
+    <h1 class="display-5 fw-bold">CeneoScraper</h1>
+    <p class="col-md-9 fs-5 text-secondary">
+      Scrape, store, browse and analyse product opinions from
+      <strong>Ceneo.pl</strong> — Poland's price-comparison marketplace.
+    </p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('extract') }}">Start extracting</a>
+    <a class="btn btn-outline-secondary btn-lg" href="{{ url_for('products') }}">View products</a>
+  </div>
+</div>
+
+<div class="row g-4">
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">What it does</h5>
+        <p class="card-text">
+          Enter a Ceneo product code and the app downloads every opinion across
+          all pages, extracting authors, scores, recommendations, pros, cons,
+          vote counts and dates.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Purpose</h5>
+        <p class="card-text">
+          Built as a university project to demonstrate web scraping, data
+          modelling, persistence and visualisation. Opinions are saved as JSON
+          and can be exported to CSV or XLSX.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Analyse</h5>
+        <p class="card-text">
+          Browse opinions in a sortable, filterable table and view charts of the
+          recommendation split and the distribution of star ratings.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="about" class="mt-5">
+  <h2>About &amp; libraries used</h2>
+  <p class="text-secondary">CeneoScraper is built with the following open-source libraries:</p>
+  <ul>
+    <li><strong>Flask</strong> — web framework and routing</li>
+    <li><strong>requests</strong> — HTTP client for fetching opinion pages</li>
+    <li><strong>BeautifulSoup4</strong> — HTML parsing and data extraction</li>
+    <li><strong>pandas</strong> + <strong>openpyxl</strong> — CSV / XLSX export</li>
+    <li><strong>Bootstrap 5</strong> — responsive UI styling</li>
+    <li><strong>DataTables</strong> — sortable / filterable opinion table</li>
+    <li><strong>Chart.js</strong> — recommendation and rating charts</li>
+  </ul>
+</div>
+{% endblock %}

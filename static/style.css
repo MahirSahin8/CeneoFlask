@@ -1,0 +1,35 @@
+body {
+  background-color: #f5f6f8;
+}
+
+.brand-mark {
+  color: #ffc107;
+}
+
+/* keep long opinion text readable inside the DataTable */
+#opinionsTable td {
+  vertical-align: top;
+  font-size: 0.9rem;
+}
+
+#opinionsTable td:nth-child(5) {
+  min-width: 320px;
+  white-space: normal;
+}
+
+#opinionsTable td:nth-child(6),
+#opinionsTable td:nth-child(7) {
+  min-width: 180px;
+}
+
+#opinionsTable tfoot input {
+  width: 100%;
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+footer {
+  font-size: 0.85rem;
+}
